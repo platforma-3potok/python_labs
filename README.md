@@ -4,17 +4,17 @@ Cтудент группы БИВТ-25-8 Ищейкин Кирилл Алекс�
 ## Лабараторная работа №1
 
 - 1 задание
-  
+### Код
 ```python
 Name = input('Введите имя:')
 Age = int(input('Введите возраст:'))
 print(f'Привет, {Name}! Через год тебе будет {Age+1}.')
 ```
-
+### Вывод
 ![](images/lab01/image_1.png)
 
 - 2 задание
-  
+### Код  
 ```python
 a = int(input())
 b = int(input())
@@ -22,11 +22,11 @@ sum = a + b
 avg = round((a + b)/ 2, 2)
 print(sum, avg, sep='; ')
 ```
-
+### Вывод
 ![](images/lab01/image_2.png)
 
 - 3 задание
-  
+### Код
 ```python
 price= int(input())
 discount= int(input())
@@ -38,22 +38,22 @@ print(f'База после скидки: {round(base, 2)} ₽')
 print(f'НДС: {round(vat_amount, 2)} ₽')
 print(f'Итого к оплате: {round(total, 2)} ₽')
 ```
-
+### Вывод
 ![](images/lab01/image_3.png)
 
 - 4 задание
-  
+### Код  
 ```python
 m = int(input())
 h = m // 60
 hm = m % 60
 print(f'{h}:{hm}')
 ```
-
+### Вывод
 ![](images/lab01/image_4.png)
 
 - 5 задание
-  
+### Код  
 ```python
 FCS = input()
 initials = ''
@@ -67,11 +67,11 @@ for i in range(1, len_FCS):
 print(initials)
 print(k)
 ```
-
+### Вывод
 ![](images/lab01/image_5.png)
 
 - 6 задание
-  
+### Код  
 ```python
 N = int(input())
 list_student = []
@@ -92,11 +92,11 @@ for i in range(N):
 		kzaoch += 1
 print(koch, kzaoch)
 ```
-
+### Вывод
 ![](images/lab01/image_6.png)
 
 - 7 задание
-  
+### Код  
 ```python
 s = input()
 len_s = len(s)
@@ -115,6 +115,6 @@ for i in range(first_ind, len_s, d):
 	out_s += s[i]
 print(out_s)
 ```
-
+### Вывод
 ![](images/lab01/image_7.png)
 ## Лабараторная работа №2
