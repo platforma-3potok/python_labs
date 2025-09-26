@@ -135,3 +135,156 @@ print(out_s)
 ---
 
 ## Лабараторная работа №2
+
+---
+
+- ###  1 задание
+#### Код
+```python
+def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
+    if not nums:
+        raise ValueError("Список пустой")
+    maxi = max(nums)
+    mini = min(nums)
+    return mini, maxi
+
+def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    list_sorted = sorted(set(nums))
+    return list_sorted
+
+def flatten(mat: list[list | tuple]) -> list:
+    res = []
+    for x in mat:
+        if not isinstance(x, (list, tuple)):
+            raise TypeError('строка не строка строк матрицы')
+        for y in x:
+            res.append(y)
+    return res
+
+example_list_1 = [-3.1, 2]
+example_list_2 = [1.0, 1, 2.5, 2.5, 0]
+example_list_3 = [[1], [], [2, 3]]
+
+result_1 = min_max(example_list_1)
+result_2 = unique_sorted(example_list_2)
+result_3 = flatten(example_list_3)
+
+print(f'Результат команды min_max: {result_1}')
+print(f'Результат команды unique_sorted: {result_2}')
+print(f'Результат команды flatten: {result_3}')
+```
+#### Вывод
+![](images/lab02/image_arrays.png)
+
+---
+
+---
+
+- ###  2 задание
+#### Код
+```python
+def transpose(mat: list[list[float | int]]) -> list[list]:
+    len_mat = len(mat)
+    if len_mat == 0:
+        return []
+    len_row = len(mat[0])
+
+    if any(len(row) != len_row for row in mat):
+        raise ValueError("рваная матрица")
+    
+    new_mat = [ [ [] for y in range(len_mat) ] for x in range(len_row)]
+    
+    for i in range(len_mat):
+        for j in range(len_row):
+            new_mat[j][i] = mat[i][j]
+
+    return new_mat
+
+def row_sums(mat: list[list[float | int]]) -> list[float]:
+    len_mat = len(mat)
+    if len_mat == 0:
+        return []
+    len_row = len(mat[0])
+
+    if any(len(row) != len_row for row in mat):
+        raise ValueError("рваная матрица")    
+    
+    res = [sum(x) for x in mat]
+
+    return res
+
+def col_sums(mat: list[list[float | int]]) -> list[float]:
+    len_mat = len(mat)
+    if len_mat == 0:
+        return []
+    len_row = len(mat[0])
+    
+    if any(len(row) != len_row for row in mat):
+        raise ValueError("рваная матрица")   
+    
+    res = [[] for x in range(len_row)]
+    for i in range(len_mat):
+       res[i] = sum([mat[j][i] for j in range(len_row)])
+    return res
+
+exmaple_mat_1 = [[1, 2], [3, 4]]
+exmaple_mat_2 = [[1, 2, 3], [4, 5, 6]]
+exmaple_mat_3 = [[-1, 1], [10, -10]]
+
+result_1 = transpose(exmaple_mat_1)
+result_2 = row_sums(exmaple_mat_2)
+result_3 = col_sums(exmaple_mat_3)
+
+print(f'Результат команды transpose: {result_1}')
+print(f'Результат команды row_sums: {result_2}')
+print(f'Результат команды col_sums: {result_3}')
+```
+#### Вывод
+![](images/lab02/image_matrix.png)
+
+---
+
+---
+
+- ###  3 задание
+#### Код
+```python
+def fio_to_fcs(fio: str):
+    fio = fio.strip()
+    fcs = ''
+    len_fio = len(fio)
+    k = 0
+    while fio[k] != ' ':
+        fcs += fio[k]
+        k += 1
+    fcs = fcs.capitalize()
+    fcs += ' '
+    for i in range(k, len_fio):
+        if fio[i] != ' ' and fio[i-1] == ' ':
+            fcs += fio[i].upper() + '.'
+    return fcs
+
+def format_record(rec: tuple[str, str, float]) -> str:
+    fio: str = rec[0]
+    group: str = rec[1]
+    gpa: float = rec[2]
+
+    if len(fio) == 0 or all(x == ' ' for x in fio):
+        raise ValueError('Пустое ФИО')
+    if len(group) == 0 or all(x == ' ' for x in group):
+        raise ValueError('Пустая группа')
+    if not isinstance(gpa, float):
+        raise TypeError('неверный тип GPA')
+    
+    fcs = fio_to_fcs(fio)
+    group = f'гр. {group}'
+    gpa = f'{gpa: .2f}'
+
+    print(f'{fcs}, {group}, GPA {gpa}')
+
+format_record( ("  сидорова  анна   сергеевна ", "ABB-01", 3.999) )
+```
+#### Вывод
+![](images/lab02/image_tuples.png)
+
+---
