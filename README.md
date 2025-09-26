@@ -178,8 +178,6 @@ print(f'Результат команды flatten: {result_3}')
 
 ---
 
----
-
 - ###  2 задание
 #### Код
 ```python
@@ -241,8 +239,6 @@ print(f'Результат команды col_sums: {result_3}')
 ```
 #### Вывод
 ![](images/lab02/image_matrix.png)
-
----
 
 ---
 
