@@ -2,7 +2,7 @@ import string
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     s = text
     if casefold:
-        s = s.lower()
+        s = s.casefold()
     if yo2e:
         s = s.replace('ё', 'е').replace('Ё', 'Е')
     s = s.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
