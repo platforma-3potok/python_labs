@@ -27,3 +27,4 @@ def script():
         k += 1
         print(f'{word:^15}: {counts:^15}')
 
+script()
