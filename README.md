@@ -138,7 +138,7 @@ print(out_s)
 
 ---
 
-- ###  1 задание
+- ###  задание A
 #### Код
 ```python
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
@@ -178,7 +178,7 @@ print(f'Результат команды flatten: {result_3}')
 
 ---
 
-- ###  2 задание
+- ###  задание B
 #### Код
 ```python
 def transpose(mat: list[list[float | int]]) -> list[list]:
@@ -242,7 +242,7 @@ print(f'Результат команды col_sums: {result_3}')
 
 ---
 
-- ###  3 задание
+- ###  задание C
 #### Код
 ```python
 def fio_to_fcs(fio: str):
@@ -289,7 +289,7 @@ format_record( ("  сидорова  анна   сергеевна ", "ABB-01", 
 
 ---
 
-- ###  1 задание
+- ###   задание A
 #### Код
 ```python
 import string

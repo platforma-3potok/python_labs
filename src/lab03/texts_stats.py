@@ -20,9 +20,10 @@ def script():
     print(f'Уникальных слов: {count_words_unique}')
     print('Топ 5:')
     k = 0
+    print(f'{"слово":^15} {"частота":^15}')
     for word, counts in dict_words_sort.items():
         if k == 5:
             break
         k += 1
-        print(f'{word}: {counts}')
+        print(f'{word:^15}: {counts:^15}')
 
