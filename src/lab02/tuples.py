@@ -14,16 +14,22 @@ def fio_to_fcs(fio: str):
     return fcs
 
 def format_record(rec: tuple[str, str, float]) -> str:
-    fio: str = rec[0]
-    group: str = rec[1]
-    gpa: float = rec[2]
-
+    if not isinstance(rec, tuple):
+        raise TypeError('не кортеж') 
+    if len(rec) != 3:
+        raise ValueError('неверная длина кортежа')
     if len(fio) == 0 or all(x == ' ' for x in fio):
         raise ValueError('Пустое ФИО')
     if len(group) == 0 or all(x == ' ' for x in group):
         raise ValueError('Пустая группа')
     if not isinstance(gpa, float):
-        raise TypeError('неверный тип GPA')
+        raise TypeError('неверный тип GPA')    
+
+    fio: str = rec[0]
+    group: str = rec[1]
+    gpa: float = rec[2]
+
+
     
     fcs = fio_to_fcs(fio)
     group = f'гр. {group}'

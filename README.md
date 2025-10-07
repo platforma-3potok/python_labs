@@ -20,11 +20,13 @@ print(f'Привет, {Name}! Через год тебе будет {Age+1}.')
 - ### 2 задание
 #### Код  
 ```python
-a = int(input())
-b = int(input())
-sum = a + b
+a = input()
+b = input()
+a = float(a.replace(',', '.'))
+b = float(b.replace(',', '.'))
 avg = round((a + b)/ 2, 2)
-print(sum, avg, sep='; ')
+sumi = a + b
+print(sumi, avg, sep='; ')
 ```
 #### Вывод
 ![](images/lab01/image_2.png)
@@ -55,7 +57,7 @@ print(f'Итого к оплате: {round(total, 2)} ₽')
 m = int(input())
 h = m // 60
 hm = m % 60
-print(f'{h}:{hm}')
+print(f'{h}:{hm:02d}')
 ```
 #### Вывод
 ![](images/lab01/image_4.png)
@@ -75,7 +77,7 @@ for i in range(1, len_FCS):
 	if FCS[i] != ' ' and FCS[i-1] == ' ':
 		initials += FCS[i]
 print(initials)
-print(k)
+print(k+2)
 ```
 #### Вывод
 ![](images/lab01/image_5.png)
