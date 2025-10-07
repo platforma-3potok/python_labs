@@ -8,4 +8,4 @@ for i in range(1, len_FCS):
 	if FCS[i] != ' ' and FCS[i-1] == ' ':
 		initials += FCS[i]
 print(initials)
-print(k)
+print(k+2)

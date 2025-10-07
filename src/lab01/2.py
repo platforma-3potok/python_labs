@@ -1,5 +1,7 @@
-a = int(input())
-b = int(input())
-sum = a + b
+a = input()
+b = input()
+a = float(a.replace(',', '.'))
+b = float(b.replace(',', '.'))
 avg = round((a + b)/ 2, 2)
-print(sum, avg, sep='; ')
+sumi = a + b
+print(sumi, avg, sep='; ')
