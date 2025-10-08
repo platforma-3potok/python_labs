@@ -1,9 +1,7 @@
 from text import normalize, tokenize, count_freq, top_n
-import sys
-
 
 def script():
-    text = sys.stdin.read()
+    text = input()
     # Получаем список всех слов
     text_corrected = tokenize(normalize(text))
     # Считаем общее кол-во слов
@@ -18,13 +16,15 @@ def script():
 
     print(f'Всего слов: {count_words}')
     print(f'Уникальных слов: {count_words_unique}')
+    print()
     print('Топ 5:')
     k = 0
-    print(f'{"слово":^15} {"частота":^15}')
-    for word, counts in dict_words_sort.items():
+    print(f'{"слово:":^15} |{"частота":^15}')
+    print(f"{'----------'*3:^30}")
+    for word, counts in dict_words_sort:
         if k == 5:
             break
         k += 1
-        print(f'{word:^15}: {counts:^15}')
+        print(f'{word:^15} |{counts:^15}')
 
 script()
