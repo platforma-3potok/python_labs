@@ -16,10 +16,10 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
 
 if __name__ == "__main__":
     try:
-        txt = read_text('src\lab01\lab04\data\input.txt')
+        txt = read_text('src\lab04\Text.txt')
         print(f"Прочитано: {txt}")
     except FileNotFoundError:
-        print("Файл src\lab01\lab04\data\input.txt не найден")
+        print("Файл text.txt не найден")
     
-    write_csv([("word", "count"), ("test", 3)], "src\lab01\lab04\data\check.csv")  
+    write_csv([("word", "count"), ("test", 3)], "table.csv")  
     print("файл csv создан!")

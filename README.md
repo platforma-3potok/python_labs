@@ -485,6 +485,6 @@ if __name__ == "__main__":
     print("файл csv создан!")
 ```
 #### Вывод
-![]()
+![](images\lab04\io_txt_csv_B.png)
 
 ---
