@@ -449,6 +449,7 @@ def main():
 if __name__ == "__main__":
     main()
 
+
 ```
 #### Вывод
 ![](images\lab04\io_txt_csv_A.png)
@@ -458,7 +459,7 @@ if __name__ == "__main__":
 - ###   задание B
 #### Код
 ```python
- import csv
+import csv
 from pathlib import Path
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     with open(path, 'r', encoding=encoding) as f:
@@ -466,7 +467,7 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
 
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
     if rows and len(set(len(row) for row in rows)) != 1:
-        return ValueError
+        raise ValueError("Все строки должны иметь одинаковую длину")
     
     with open(path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -476,13 +477,14 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
 
 if __name__ == "__main__":
     try:
-        txt = read_text('src\lab01\lab04\data\input.txt')
+        txt = read_text('src\lab04\Text.txt')
         print(f"Прочитано: {txt}")
     except FileNotFoundError:
-        print("Файл src\lab01\lab04\data\input.txt не найден")
+        print("Файл text.txt не найден")
     
-    write_csv([("word", "count"), ("test", 3)], "src\lab01\lab04\data\check.csv")  
+    write_csv([("word", "count"), ("test", 3)], "table.csv")  
     print("файл csv создан!")
+
 ```
 #### Вывод
 ![](images\lab04\io_txt_csv_B.png)

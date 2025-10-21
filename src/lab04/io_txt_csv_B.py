@@ -6,7 +6,7 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
 
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
     if rows and len(set(len(row) for row in rows)) != 1:
-        return ValueError
+        raise ValueError("Все строки должны иметь одинаковую длину")
     
     with open(path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
