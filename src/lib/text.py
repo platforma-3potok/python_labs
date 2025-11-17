@@ -1,4 +1,4 @@
-import string, os, sys
+import string, os
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     s = text
     if casefold:
@@ -43,14 +43,7 @@ def ensure_directory_exists(file_path: str) -> None:
     if directory and not os.path.exists(directory):
         os.makedirs(directory)
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-
-try:
-    from src.lab03.text import normalize, tokenize, count_freq, top_n
-except ImportError as e:
-    sys.exit(f"Ошибка импорта: {e}")
-
-def table_output(text: str):
+def table_output(text: str, top: int = 5):
     # Получаем список всех слов
     text_corrected = tokenize(normalize(text))
     # Считаем общее кол-во слов
@@ -65,11 +58,11 @@ def table_output(text: str):
     print(f'Всего слов: {count_words}')
     print(f'Уникальных слов: {count_words_unique}')
     print()
-    print('Топ 5:')
+    print(f'Топ {top}:')
     
     # Находим максимальную длину слова и частоты в топ-5
-    max_word_len = max(len(word) for word, _ in dict_words_sort[:5])
-    max_count_len = max(len(str(count)) for _, count in dict_words_sort[:5])
+    max_word_len = max(len(word) for word, _ in dict_words_sort[:top])
+    max_count_len = max(len(str(count)) for _, count in dict_words_sort[:top])
     
     # Устанавливаем ширину колонок (минимум 15 как было изначально)
     col_width = max(15, max_word_len + 2, max_count_len + 2)
@@ -78,7 +71,7 @@ def table_output(text: str):
     print(f'{"слово:":^{col_width}} |{"частота":^{col_width}}')
     print(f"{'-' * col_width}-|-{'-' * col_width}")
     for word, counts in dict_words_sort:
-        if k == 5:
+        if k == top:
             break
         k += 1
         print(f'{word:^{col_width}} |{counts:^{col_width}}')    
