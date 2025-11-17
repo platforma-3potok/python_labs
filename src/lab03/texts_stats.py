@@ -13,18 +13,25 @@ def script():
     # Сортируем словарь по кол-ву слов
     dict_words_sort = top_n(dict_words)
 
-
     print(f'Всего слов: {count_words}')
     print(f'Уникальных слов: {count_words_unique}')
     print()
     print('Топ 5:')
+    
+    # Находим максимальную длину слова и частоты в топ-5
+    max_word_len = max(len(word) for word, _ in dict_words_sort[:5])
+    max_count_len = max(len(str(count)) for _, count in dict_words_sort[:5])
+    
+    # Устанавливаем ширину колонок (минимум 15 как было изначально)
+    col_width = max(15, max_word_len + 2, max_count_len + 2)
+    
     k = 0
-    print(f'{"слово:":^15} |{"частота":^15}')
-    print(f"{'----------'*3:^30}")
+    print(f'{"слово:":^{col_width}} |{"частота":^{col_width}}')
+    print(f"{'-' * col_width}-|-{'-' * col_width}")
     for word, counts in dict_words_sort:
         if k == 5:
             break
         k += 1
-        print(f'{word:^15} |{counts:^15}')
+        print(f'{word:^{col_width}} |{counts:^{col_width}}')
 
 script()
