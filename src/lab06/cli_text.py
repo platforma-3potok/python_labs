@@ -11,7 +11,7 @@ def stats(input_file: str, top: int = 5):
         with open(input_file, 'r', encoding='utf-8') as file:
             text = file.read()
     
-        table_output(text, top)  # ← ПЕРЕДАЕМ top
+        table_output(text, top) 
              
     except FileNotFoundError:
         print(f"Ошибка: Файл '{input_file}' не найден")
