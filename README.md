@@ -607,26 +607,26 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         print(f"Ошибка: {e}")
 
 try:
-	json_to_csv("python_labs/data/samples/empty_json.json", "python_labs/data/out/empty_json.csv")
-	csv_to_json("python_labs/data/samples/no_header_csv.csv", "python_labs/data/out/no_header_csv.json")
-	json_to_csv("python_labs/data/samples/test_missing_fields.json", "python_labs/data/out/missing_fields_from_json.csv")
-	json_to_csv("python_labs/data/samples/people.json", "python_labs/data/out/people_from_json.csv")
-	csv_to_json("python_labs/data/samples/people.csv", "python_labs/data/out/people_from_csv.json")
+	json_to_csv("data/samples/empty_json.json", "data/out/empty_json.csv")
+	csv_to_json("data/samples/no_header_csv.csv", "data/out/no_header_csv.json")
+	json_to_csv("data/samples/test_missing_fields.json", "data/out/missing_fields_from_json.csv")
+	json_to_csv("data/samples/people.json", "data/out/people_from_json.csv")
+	csv_to_json("data/samples/people.csv", "data/out/people_from_csv.json")
 except Exception as e:
      print(f"Ошибка: {e}")
 
 ```
 #### Вывод
 пустый json
-![](python_labs\images\lab05\empty_json.png)
+![](pimages\lab05\empty_json.png)
 csv без заголовков не создает json файл
-![](python_labs\images\lab05\no_logo.png)
+![](pimages\lab05\no_logo.png)
 people csv -> json
-![](python_labs\images\lab05\people_json.png)
+![](pimages\lab05\people_json.png)
 people json -> csv
-![](python_labs\images\lab05\people_csv.png)
+![](pimages\lab05\people_csv.png)
 пустые ячейки
-![](python_labs\images\lab05\missing.png)
+![](pimages\lab05\missing.png)
 ---
 
 - ###   задание B
@@ -704,16 +704,16 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         raise ValueError(f'Не получилось считать CSV файл: {e}')
 
 try:
-    csv_to_xlsx("python_labs/data/samples/people.csv", "python_labs/data/out/people.xlsx")
-    csv_to_xlsx("python_labs/data/samples/cities.csv", "python_labs/data/out/cities.xlsx")  
+    csv_to_xlsx("data/samples/people.csv", "data/out/people.xlsx")
+    csv_to_xlsx("data/samples/cities.csv", "data/out/cities.xlsx")  
 except Exception as e:
     print(f"Ошибка: {e}")
 ```
 #### Вывод
 cities.xlsx
-![](python_labs\images\lab05\cities_xlsx.png)
+![](pimages\lab05\cities_xlsx.png)
 people.xlsx
-![](python_labs\images\lab05\people_xlsx.png)
+![](pimages\lab05\people_xlsx.png)
 
 ---
 
@@ -791,11 +791,11 @@ if __name__ == "__main__":
 ```
 #### Вывод
 help_cli_text
-![](python_labs/images/lab06/help_cli_text.png)
+![](images/lab06/help_cli_text.png)
 help_cat
-![](python_labs/images/lab06/help_cat.png)
+![](images/lab06/help_cat.png)
 help_stats
-![](python_labs/images/lab06/help_stats.png)
+![](images/lab06/help_stats.png)
 
 ---
 
@@ -852,13 +852,13 @@ if __name__ == "__main__":
 ```
 #### Вывод
 help_cli_convert
-![](python_labs/images/lab06/help_cli_convert.png)
+![](images/lab06/help_cli_convert.png)
 help_csv2json
-![](python_labs/images/lab06/help_csv2json.png)
+![](images/lab06/help_csv2json.png)
 help_csv2xlsx
-![](python_labs/images/lab06/help_csv2xlsx.png)
+![](images/lab06/help_csv2xlsx.png)
 help_json2csv
-![](python_labs/images/lab06/help_json2csv.png)
+![](images/lab06/help_json2csv.png)
 
 ---
 
@@ -870,18 +870,18 @@ help_json2csv
 
 - ###   Автотесты
 
-![](python_labs/images/lab07/pytest.png)
+![](images/lab07/pytest.png)
 
 ---
 
 - ###   Покрытие
 
-![](python_labs/images/lab07/code_cover.png)
+![](images/lab07/code_cover.png)
 
 ---
 
 - ###   Black
 
-![](python_labs/images/lab07/black.png)
+![](images/lab07/black.png)
 
 ---
