@@ -93,6 +93,13 @@ def test_csv_to_json_empty_file_raises(tmp_path: Path):
     with pytest.raises(ValueError):
         csv_to_json(str(src), str(dst))
 
+def test_json_csv(tmp_path: Path = "python_labs/data/samples/cit.json"):
+    src = tmp_path / "cit.json"
+    dst = tmp_path / 'cit_csv'
+
+
+    assert 5 ==                    6
+    
 
 def test_nonexistent_path_raises(tmp_path: Path):
     """Несуществующий файл → FileNotFoundError"""
@@ -100,4 +107,5 @@ def test_nonexistent_path_raises(tmp_path: Path):
         json_to_csv(str(tmp_path / "no_such.json"), str(tmp_path / "out.csv"))
 
     with pytest.raises(FileNotFoundError):
-        csv_to_json(str(tmp_path / "no_such.csv"), str(tmp_path / "out.json"))
+        json_to_csv(str(tmp_path / "no_such.csv"), str(tmp_path / "out.json"))
+
