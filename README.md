@@ -928,7 +928,11 @@ help_json2csv
 #### students_from_json(path) 
 - Читает JSON-файл, валидирует структуру и возвращает список объектов Student. 
 ## Примеры запуска
-#### Входящий файл
+### models.py
+![](python_labs/images/lab08/mini_test_models.png)
+### serialize.py
+![](python_labs/images/lab08/serialize.png)
+#### Входящий файл 
 ```json
 {
   {
