@@ -929,9 +929,9 @@ help_json2csv
 - Читает JSON-файл, валидирует структуру и возвращает список объектов Student. 
 ## Примеры запуска
 ### models.py
-![](python_labs/images/lab08/mini_test_models.png)
+![](images/lab08/mini_test_models.png)
 ### serialize.py
-![](python_labs/images/lab08/serialize.png)
+![](images/lab08/serialize.png)
 #### Входящий файл 
 ```json
 {
