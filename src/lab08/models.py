@@ -11,14 +11,18 @@ class Student:
     def __post_init__(self):
         if not isinstance(self.fio, str):
             raise TypeError("ФИО должно быть строкой")
+        if len(self.fio) == 0:
+            raise ValueError("ФИО не может быть пустым")
         if not isinstance(self.birthdate, str):
-            raise TypeError("Дата рождения должно быть строкой в формате YYYY-MM-DD.")
+            raise TypeError("Дата рождения должно быть строкой в формате YYYY-MM-DD.")     
         try:
             datetime.strptime(self.birthdate, "%Y-%m-%d")
         except ValueError:
             raise TypeError("Неверный формат даты, введите в виде YYYY-MM-DD")
         if not isinstance(self.group, str):
             raise TypeError("Номер группы должен быть строкой")
+        if len(self.fio) == 0:
+            raise ValueError("Группа не может быть пустой")
         if isinstance(self.gpa, int):
             self.gpa = float(self.gpa)
         if not isinstance(self.gpa, float):
