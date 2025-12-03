@@ -1,7 +1,7 @@
+from __future__ import annotations
 import csv
 from src.lab08.models import Student
 from pathlib import Path
-
 
 class Group:
     def __init__(self, storage_path: str):
@@ -24,7 +24,7 @@ class Group:
             writer = csv.writer(file)
 
             row_data = [
-                student.fio,
+                student.fio.capitalize,
                 student.birthdate,
                 student.group,
                 str(student.gpa)
@@ -112,6 +112,48 @@ class Group:
                     student.group = field_group
                 if field_gpa is not None:
                     student.gpa = field_gpa
-        if student_found: return f'Студент {fio} не найден'
+                all_students.append(student)
+        if not student_found: return f'Студент {fio} не найден'
         self._write_all(all_students)
         return f'Данные студента {fio} изменены'
+    
+    def stats(self) -> dict:
+        students = self._read_all()
+        count_students = len(Student)
+        min_gpa = 5.0
+        max_gpa = 0.0
+        sum_gpa = 0
+        csig = {} # count_students_in_group
+        students = sorted(students, key = lambda student: (-student.gpa, student.fio))
+
+        top_5_students = []
+        k = 0
+        for student in students:
+            k += 1
+            if k <= 5: top_5_students.append(student)
+
+            t_gpa = float(student.gpa)
+            sum_gpa += t_gpa
+            if t_gpa > max_gpa:
+                max_gpa = t_gpa
+            if t_gpa < min_gpa:
+                min_gpa = t_gpa
+            
+            t_group = student.group
+            if t_group not in csig:
+                csig[t_group] = 1
+            else:
+                csig[t_group] += 1
+            
+        avg_gpa = sum_gpa / count_students
+
+        d = {
+            "count": count_students,
+            "min_gpa": min_gpa,
+            "max_gpa": max_gpa,
+            "avg_gpa": avg_gpa,
+            "groups": csig,
+            "top_5_students": top_5_students
+        }
+        
+        return d
