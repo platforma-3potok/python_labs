@@ -60,10 +60,10 @@ class Student:
                 raise ValueError(f"Missing required field: {field}")
         
         return cls(
-            fio=d["fio"],
-            birthdate=d["birthdate"],
-            group=d["group"],
-            gpa=d["gpa"]
+            fio = d["fio"],
+            birthdate = d["birthdate"],
+            group = d["group"],
+            gpa = d["gpa"]
         )
 
     def __str__(self):
