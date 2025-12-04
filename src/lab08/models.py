@@ -63,7 +63,7 @@ class Student:
             fio = d["fio"],
             birthdate = d["birthdate"],
             group = d["group"],
-            gpa = d["gpa"]
+            gpa = float(d["gpa"])
         )
 
     def __str__(self):

@@ -20,11 +20,11 @@ class Group:
                 writer.writerow(["fio", "birthdate", "group", "gpa"])
 
     def add(self, student: Student):
-        with open(self.path, 'a', newline='') as file:
+        with open(self.path, 'a', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
 
             row_data = [
-                student.fio.capitalize,
+                student.fio.capitalize(),
                 student.birthdate,
                 student.group,
                 str(student.gpa)
@@ -52,7 +52,7 @@ class Group:
         return students
     
     def _write_all(self, students: list[Student]):
-        with open(self.path, 'w', newline='') as file:
+        with open(self.path, 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(["fio", "birthdate", "group", "gpa"])
 
@@ -119,7 +119,7 @@ class Group:
     
     def stats(self) -> dict:
         students = self._read_all()
-        count_students = len(Student)
+        count_students = len(students)
         min_gpa = 5.0
         max_gpa = 0.0
         sum_gpa = 0
