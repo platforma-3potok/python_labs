@@ -1079,27 +1079,27 @@ help_json2csv
 ---
 
 ### Пример команды list
-![](python_labs/images/lab09/list.png)
+![](images/lab09/list.png)
 ### Пример команды add
-![](python_labs/images/lab09/add.png)
+![](images/lab09/add.png)
 ---
-![](python_labs/images/lab09/add2.png)
+![](images/lab09/add2.png)
 ### Пример команды find
-![](python_labs/images/lab09/find.png)
+![](images/lab09/find.png)
 ### Пример команды update
-![](python_labs/images/lab09/update.png)
+![](images/lab09/update.png)
 ### Пример команды remove
-![](python_labs/images/lab09/remove.png)
+![](images/lab09/remove.png)
 ---
-![](python_labs/images/lab09/remove2.png)
+![](images/lab09/remove2.png)
 ### Пример команды stats
-![](python_labs/images/lab09/stats.png)
+![](images/lab09/stats.png)
 ### Пример красивого оформления
-![](python_labs/images/lab09/dop.png)
+![](images/lab09/dop.png)
 ### Пример команды 1
-![](python_labs/images/lab09/command1.png)
+![](images/lab09/command1.png)
 ### Пример команды 6
-![](python_labs/images/lab09/command6.png)
+![](images/lab09/command6.png)
 
 ### Код __init__.py
 ```python
