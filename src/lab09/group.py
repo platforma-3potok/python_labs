@@ -24,7 +24,7 @@ class Group:
             writer = csv.writer(file)
 
             row_data = [
-                student.fio.capitalize(),
+                student.fio.title(),
                 student.birthdate,
                 student.group,
                 str(student.gpa)
@@ -70,7 +70,7 @@ class Group:
         students = self._read_all()
         found_students = []
         for student in students:
-            if student.fio.lower() == substr.lower():
+            if substr.lower() in student.fio.lower():
                 found_students.append(student)
         if len(found_students) == 0:
             return f"Студент {substr} не найден"
